@@ -12,7 +12,7 @@ var playerMoney = 10;
 
 // You can also log multiple values at once like this
 
-var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"]
+var enemyName = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
@@ -29,20 +29,20 @@ var fight = function() {
     // remove enemy's health by subtracting the amount set in the playerAttack variable
     enemyHealth = enemyHealth - playerAttack;
     console.log(
-      playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+      playerName + " attacked " + enemyName[i] + ". " + enemyName[i] + " now has " + enemyHealth + " health remaining."
     );
 
     // check enemy's health
     if (enemyHealth <= 0) {
-      window.alert(enemyName + " has died!");
+      window.alert(enemyName[i] + " has died!");
     } else {
-      window.alert(enemyName + " still has " + enemyHealth + " health left.");
+      window.alert(enemyName[i] + " still has " + enemyHealth + " health left.");
     }
 
     // remove players's health by subtracting the amount set in the enemyAttack variable
     playerHealth = playerHealth - enemyAttack;
     console.log(
-      enemyNames + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+      enemyName[i] + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
     );
 
     // check player's health
@@ -73,6 +73,6 @@ var fight = function() {
 };
 
 // run fight function to start game
-for(var i = 0; i<enemyNames.length; i++){
-    fight(enemyNames[i])
-}
+for(var i = 0; i < enemyName.length; i++) {
+    fight(enemyName[i]);
+  }
