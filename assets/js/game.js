@@ -15,7 +15,7 @@ var playerMoney = 10;
 var enemyName = ["soborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
-window.alert("Welcome to Robot Gladiators!");
+
 
 // fight function
 var fight = function(pickedEnemyName) {
@@ -83,7 +83,14 @@ var fight = function(pickedEnemyName) {
 
 // run fight function to start game
 for(var i = 0; i < enemyName.length; i++) {
-  var pickedEnemyName = enemyName[i];
+  if (playerHealth > 0) {
+    window.alert("Welcom to Robot Gladiators! Round " + ( i + 1));
+    var pickedEnemyName = enemyName[i];
   enemyHealth = 50;
+  debugger;
     fight(pickedEnemyName[i]);
+  } else {
+    window.alert("You have lost your robot n battle! Game Over!")
+  }
+  
 }
